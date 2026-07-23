@@ -1,12 +1,7 @@
 {
-  "version_name": "v1.1.0",
-  "version_code": 110,
-  "release_date": "July 20, 2026",
-  "download_url": "https://github.com/taligrambd-sys/Kaalsoft/raw/main/webkaal/webkaal.apk",
-  "whats_new": [
-    "Added brand new Unity Ads integration support.",
-    "Disabled system settings sidebar swipe gesture (now works via menu button only).",
-    "Fixed accidental app exits by implementing Double Back to Exit.",
-    "Resolved Room database integrity issues."
-  ]
+  "version_code": 2,
+  "version_name": "1.3.0",
+  "download_url": "https://taligrambd-sys.github.io/Kaalsoft/webkaal/",
+  "changelog": "• নতুন আকর্ষণীয় ডিজাইন যুক্ত করা হয়েছে।\n• অ্যাপের গতি ও পারফরম্যান্স আরও বাড়ানো হয়েছে।\n• বিভিন্ন ছোটখাটো বাগ ফিক্স করা হয়েছে।",
+  "force_update": false
 }
