@@ -1,3 +1,48 @@
+<div class="unity-ads-docs">
+    <p>
+        <strong>Webkaal Unity Ads Integration Overview:</strong> This application features a built-in native Android-to-JavaScript bridge for <strong>Unity Ads SDK v4.12.0</strong>. It allows web applications running inside the WebView to initialize Unity Ads, request banner placement positioning, load and display Interstitial and Rewarded ads, and listen for real-time lifecycle callbacks directly via JavaScript context.
+    </p>
+
+    <h3>1. Registered JS Bridge Namespaces</h3>
+    <p>
+        You can invoke Unity Ads methods using any of the following global JavaScript interface objects:
+        <code>window.Android</code>, <code>window.UnityAds</code>, <code>window.UnityAdsAndroid</code>, <code>window.UnityAdsBridge</code>, or <code>window.HTMLToAPK</code>.
+    </p>
+
+    <h3>2. Available Methods & Functions</h3>
+    <p>
+        The native bridge exposes the following methods for complete ad management:
+    </p>
+    <ul>
+        <li><code>initUnityAds(gameId, testMode)</code>: Manually initializes Unity Ads with your Game ID and boolean test mode flag.</li>
+        <li><code>isUnityAdsInitialized()</code> / <code>isInitialized()</code>: Returns <code>true</code> if the Unity Ads SDK is initialized and ready.</li>
+        <li><code>setBannerPosition('TOP' | 'BOTTOM')</code>: Sets the anchor alignment for the banner container.</li>
+        <li><code>loadBanner('Placement_ID')</code> / <code>loadBannerAd('Placement_ID')</code>: Fetches and displays a banner ad.</li>
+        <li><code>hideBanner()</code> / <code>removeBanner()</code>: Hides and cleans up the active banner ad view.</li>
+        <li><code>loadInterstitial('Placement_ID')</code> / <code>loadInterstitialAd('Placement_ID')</code>: Preloads full-screen Interstitial ad.</li>
+        <li><code>showInterstitial('Placement_ID')</code> / <code>showInterstitialAd('Placement_ID')</code>: Displays the preloaded Interstitial ad.</li>
+        <li><code>loadRewarded('Placement_ID')</code> / <code>loadRewardedAd('Placement_ID')</code>: Preloads Rewarded video ad.</li>
+        <li><code>showRewarded('Placement_ID')</code> / <code>showRewardedAd('Placement_ID')</code>: Displays the preloaded Rewarded video ad.</li>
+    </ul>
+
+    <h3>3. Supported Window Event Callbacks</h3>
+    <p>
+        Define any of these functions in your web page's global scope (<code>window</code>) to automatically receive real-time event updates from native Android:
+    </p>
+    <ul>
+        <li><code>onUnityAdsInitialized()</code> & <code>onUnityAdsInitFailed(errorMessage)</code></li>
+        <li><code>onBannerLoaded(placementId)</code> & <code>onBannerFailed(placementId, error)</code></li>
+        <li><code>onInterstitialLoaded(placementId)</code> & <code>onInterstitialFailed(placementId, error)</code></li>
+        <li><code>onInterstitialShowStart(placementId)</code>, <code>onInterstitialShowFailed(placementId, error)</code>, <code>onInterstitialClicked(placementId)</code>, & <code>onInterstitialClosed(placementId)</code></li>
+        <li><code>onRewardedLoaded(placementId)</code> & <code>onRewardedFailed(placementId, error)</code></li>
+        <li><code>onRewardedShowStart(placementId)</code>, <code>onRewardedShowFailed(placementId, error)</code>, <code>onRewardedClicked(placementId)</code>, <code>onRewardedClosed(placementId)</code>, & <code>onRewardedCompleted(placementId)</code></li>
+    </ul>
+                                                                                                                                                                               </div>
+
+
+
+
+
 <div style="font-family: Arial, sans-serif; line-height: 1.7; color: #333; max-width: 800px; margin: 0 auto; padding: 20px;">
 
   <p>
