@@ -1,0 +1,59 @@
+<div style="font-family: Arial, sans-serif; line-height: 1.7; color: #333; max-width: 800px; margin: 0 auto; padding: 20px;">
+
+  <p>
+    অ্যাপে যুক্ত করা <strong>Unity Ads JavaScript Bridge</strong> 
+    (<code>window.Android</code>, <code>window.UnityAds</code>, <code>window.UnityAdsAndroid</code>, 
+    <code>window.UnityAdsBridge</code>, <code>window.HTMLToAPK</code>) দিয়ে আপনার HTML/JS ওয়েবসাইট থেকে 
+    সরাসরি নিচের সমস্ত কাজগুলো করা যাবে:
+  </p>
+
+  <h3>১. SDK ইনিশিয়ালাইজেশন ও স্ট্যাটাস চেক</h3>
+  <ul>
+    <li><code>initUnityAds(gameId, testMode)</code> — ওয়েবসাইট চলাকালীন ডাইনামিক্যালি Unity Game ID এবং Test Mode দিয়ে SDK শুরু করা।</li>
+    <li><code>isUnityAdsInitialized()</code> — ইউনিটি এডস সক্রিয়/ইনিশিয়ালাইজড আছে কিনা তা <code>true</code> / <code>false</code> রিটার্ন করে জানা।</li>
+  </ul>
+
+  <h3>২. ব্যানার বিজ্ঞাপন (Banner Ads)</h3>
+  <ul>
+    <li><code>loadBannerAd("Placement_ID")</code> বা <code>loadBanner("Placement_ID")</code> — নির্দিষ্ট Placement ID দিয়ে ব্যানার লোড ও ডিসপ্লে করা।</li>
+    <li><code>setBannerPosition("TOP")</code> বা <code>setBannerPosition("BOTTOM")</code> — ব্যানারের অবস্থান স্ক্রিনের উপরে বা নিচে সেট করা।</li>
+    <li><code>hideBanner()</code> / <code>removeBanner()</code> — ব্যানার অ্যাড স্ক্রিন থেকে সরিয়ে ফেলা।</li>
+  </ul>
+
+  <h3>৩. ইন্টারস্টিশিয়াল অ্যাড (Full-screen Interstitial Ads)</h3>
+  <ul>
+    <li><code>loadInterstitialAd("Placement_ID")</code> — ফুলস্ক্রিন বিজ্ঞাপন ব্যাকগ্রাউন্ডে প্রি-লোড করা।</li>
+    <li><code>showInterstitialAd("Placement_ID")</code> — প্রি-লোড হওয়া ফুলস্ক্রিন বিজ্ঞাপন ব্যবহারকারীকে দেখানো।</li>
+  </ul>
+
+  <h3>৪. রিওয়ার্ডেড ভিডিও অ্যাড (Rewarded Video Ads)</h3>
+  <ul>
+    <li><code>loadRewardedAd("Placement_ID")</code> — পুরস্কারভিত্তিক ভিডিও বিজ্ঞাপন প্রি-লোড করা।</li>
+    <li><code>showRewardedAd("Placement_ID")</code> — রিওয়ার্ডেড বিজ্ঞাপন দেখানো (যেমন: পয়েন্ট বা কয়েন দেওয়ার জন্য)।</li>
+  </ul>
+
+  <h3>৫. অটোমেটিক JavaScript Callbacks (ইভেন্ট পাওয়ার জন্য)</h3>
+  <p>
+    বিজ্ঞাপনের যেকোনো অবস্থার আপডেট ওয়েবসাইট বা HTML-এ পাওয়ার জন্য নিচের গ্লোবাল ফাংশনগুলো ব্যবহার করা যায়:
+  </p>
+
+  <pre style="background: #1e1e1e; color: #d4d4d4; padding: 16px; border-radius: 8px; overflow-x: auto; font-size: 14px;">
+<code>// ইনিশিয়ালাইজেশন আপডেট
+window.onUnityAdsInitialized = function() { console.log("Unity Ads Ready!"); };
+
+// ইন্টারস্টিশিয়াল ও রিওয়ার্ডেড লোড / শোর আপডেট
+window.onInterstitialLoaded = function(placementId) { ... };
+window.onInterstitialShowStart = function(placementId) { ... };
+window.onInterstitialComplete = function(placementId) { ... };
+
+window.onRewardedLoaded = function(placementId) { ... };
+window.onRewardedComplete = function(placementId) { 
+    // ব্যবহারকারীকে পয়েন্ট বা রিওয়ার্ড দেওয়ার কোড
+};
+
+// ব্যানার ইভেন্ট
+window.onBannerLoaded = function() { ... };
+window.onBannerFailed = function(error) { ... };</code>
+  </pre>
+
+</div>
